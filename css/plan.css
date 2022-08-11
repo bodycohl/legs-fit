@@ -1,0 +1,38 @@
+#plan-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+}
+
+#linkTo {
+    width: 600px;
+}
+
+#breakdown {
+    margin-top: 15px;
+}
+
+ul#info li.sub-header{
+    font-size: x-large;
+    list-style-type: disc;
+    font-family:'Courier New', Courier, monospace;
+}
+
+#caption {
+    text-align: center;
+    font-family: "Krungthep";
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#about-program {
+    margin-top: 50px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: x-large;
+}

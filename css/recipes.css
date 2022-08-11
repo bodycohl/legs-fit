@@ -1,0 +1,63 @@
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    margin: 75px;
+}
+
+.recipe {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipe-icon {
+    width: 475px;
+    height: 475px;
+}
+
+#caption {
+    font-family: "Krungthep";
+    font-size: large;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.img-wrap {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    background-color: rgba(173, 206, 131, 0.8);
+	overflow: hidden;
+	transition: .7s ease;
+}
+
+.img-wrap:hover .overlay {
+	height: 100%;
+}
+
+.text {
+    text-align: center;
+    word-wrap: break-word;
+	font-family: "Krungthep";
+	color: white;
+	font-weight: lighter;
+    font-size: 30px;
+	position: absolute;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
