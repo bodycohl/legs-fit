@@ -28,7 +28,7 @@
  }
 
  /* Moblie Device */
-@media (max-width: 450px)
+ @media (max-width: 550px)
 {
     #container {
         flex-direction: column;
