@@ -138,7 +138,7 @@
 }
 
 /* Moblie Device */
-@media (min-width: 450px)
+@media (max-width: 450px)
 {
   .navlink > a {
     font-size: 0.8em;
