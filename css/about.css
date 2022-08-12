@@ -32,6 +32,7 @@
 {
     #container {
         flex-direction: column;
+        width: 80vw;
     }
     #text {
         font-size: large;
