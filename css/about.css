@@ -26,3 +26,20 @@
     flex-direction: column;
     margin-left: 15px;
  }
+
+ /* Moblie Device */
+@media (min-width: 450px)
+{
+    #container {
+        flex-direction: column;
+    }
+    #text {
+        font-size: large;
+    }
+
+    #about-pic {
+        height: 500px;
+        padding-left: 100px;
+        margin-top: 70px;
+    }
+}
