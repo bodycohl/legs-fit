@@ -136,3 +136,29 @@
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+
+/* Moblie Device */
+@media (min-width: 450px)
+{
+  .navlink > a {
+    font-size: 0.8em;
+    color: #ADCE83;
+  }
+
+  .navlink-main > a {
+    font-size: 0.8em;
+  }
+
+  #main-title {
+    font-size: 5.0em;
+    top: 15%;
+  }
+
+  #myVideo {
+    transform:rotate(90deg);
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+
+}
