@@ -36,3 +36,23 @@ a {
     font-family:'Courier New', Courier, monospace;
     font-size: x-large;
 }
+ /* Moblie Device */
+ @media screen and (max-width: 600px)
+ {
+     #linkTo {
+         width: 400px;
+     }
+
+     #breakdown {
+         width: 400px;
+     }
+
+     ul#info li.sub-header{
+        font-size: large;
+    }
+
+    #about-program {
+        font-size: large;
+    }
+
+ }
