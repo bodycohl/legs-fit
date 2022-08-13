@@ -44,3 +44,23 @@ h3 {
     text-decoration: none;
     color: #ADCE83;
 }
+
+@media screen and (max-width: 600px) {
+    #summary {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #checkout-icon {
+        padding-left: 0px;
+    }
+
+    #paypal-button-container {
+        left: 2%;
+        right: 2%;
+    }
+
+    #footer {
+        flex-direction: column;
+    }
+}
