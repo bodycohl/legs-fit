@@ -61,3 +61,19 @@ a {
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 }
+
+ /* Moblie Device */
+ @media screen and (max-width: 600px)
+ {
+     .recipe-icon {
+		 width: 300px;
+		 height: 300px;
+	 }
+
+	 #main-container {
+		flex-direction: column;
+		align-items: center;
+		margin: 50px;
+	}
+
+ }
