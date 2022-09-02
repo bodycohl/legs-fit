@@ -33,6 +33,10 @@ h3 {
     text-align: center;
 }
 
+#amount {
+    text-decoration: line-through;
+}
+
 #explanation {
     font-family:'Courier New', Courier, monospace;
     text-align: center;
