@@ -52,6 +52,9 @@ a {
  /* Moblie Device */
  @media screen and (max-width: 600px)
  {
+     #plan-container {
+         flex-direction: column;
+    }
      #linkTo {
          width: 400px;
      }
