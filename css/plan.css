@@ -1,9 +1,15 @@
 #plan-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 75px;
+}
+
+#plan-container-2{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #linkTo {
@@ -14,7 +20,7 @@
     margin-top: 15px;
 }
 
-ul#info li.sub-header{
+ul#info li.sub-header {
     font-size: x-large;
     list-style-type: disc;
     font-family:'Courier New', Courier, monospace;
@@ -36,6 +42,13 @@ a {
     font-family:'Courier New', Courier, monospace;
     font-size: x-large;
 }
+
+ /* Footer formatting & icons */
+ footer {
+    flex-direction: column;
+    margin-left: 15px;
+ }
+
  /* Moblie Device */
  @media screen and (max-width: 600px)
  {
