@@ -21,7 +21,7 @@
 }
 
 #breakdown-image {
-    margin-top: 20px;
+    margin-top: 50px;
     height: 600px;
 }
 
@@ -57,9 +57,12 @@ a {
  /* Moblie Device */
  @media screen and (max-width: 600px)
  {
-
     #plan-container {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 75px;
     }
     
      #linkTo {
@@ -76,8 +79,7 @@ a {
 
     #about-program {
         text-align: justify;
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 350px;
         font-size: medium;
     }
 
