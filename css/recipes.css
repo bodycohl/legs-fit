@@ -6,14 +6,9 @@
     margin: 75px;
 }
 
-.recipe {
-    flex-direction: column;
-    justify-content: center;
-}
-
 .recipe-icon {
-    width: 425px;
-    height: 425px;
+	width: 450px;
+    height: 450px;
 }
 
 #caption {
@@ -53,7 +48,7 @@ a {
 	font-family: "Krungthep";
 	color: white;
 	font-weight: lighter;
-    font-size: 30px;
+    font-size: 28px;
 	position: absolute;
 	overflow: hidden;
 	top: 50%;
@@ -65,6 +60,11 @@ a {
  /* Moblie Device */
  @media screen and (max-width: 600px)
  {
+	 /* Footer formatting & icons */
+	 footer {
+		flex-direction: column;
+		margin-left: 15px;
+	 }
      .recipe-icon {
 		 width: 300px;
 		 height: 300px;
@@ -75,5 +75,4 @@ a {
 		align-items: center;
 		margin: 50px;
 	}
-
  }
