@@ -75,6 +75,7 @@
   /* Footer formatting & icons */
   footer {
       display: flex;
+      flex-direction: row;
       justify-content: baseline;
       align-items: center;
       position: fixed;
@@ -141,30 +142,36 @@
 @media screen and (max-width: 600px)
 {
   .navlink > a {
-    font-size: 0.8em;
-    color: #ADCE83;
+    font-size: 0.9em;
   }
 
   .navlink-main > a {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
   #main-title {
     font-size: 5.0em;
-    top: 15%;
   }
 
   #myVideo {
-    transform:rotate(90deg);
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
+    transform: scale(0.4);
+    transform: rotate(90deg);
+    right: -100%;
   }
+
+  .sub-titles {
+    font-size: 2.5em;
+    letter-spacing: 0.2em;
+  }
+
+  footer {
+    right: 1%;
+    margin-bottom: 20px;
+}
 
   .footer-icons {
     width: 20px;
     height: 20px;
     padding-right: 10px
   }
-
 }
