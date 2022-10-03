@@ -6,7 +6,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     gap: 15px;
-    border: 10px;;
+    border: 10px;
 }
 
 #summary {
@@ -36,6 +36,7 @@ h3 {
 #explanation {
     font-family:'Courier New', Courier, monospace;
     text-align: center;
+    width: 800px;
 }
 
 #download {
@@ -55,9 +56,12 @@ h3 {
         padding-left: 0px;
     }
 
+    #explanation {
+        width: 400px;
+    }
+
     #paypal-button-container {
-        left: 2%;
-        right: 2%;
+        left: 0;
     }
 
     #footer {
