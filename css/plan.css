@@ -17,7 +17,12 @@
 }
 
 #breakdown {
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+#breakdown-image {
+    margin-top: 20px;
+    height: 600px;
 }
 
 ul#info li.sub-header {
@@ -52,15 +57,17 @@ a {
  /* Moblie Device */
  @media screen and (max-width: 600px)
  {
-     #plan-container {
-         flex-direction: column;
+
+    #plan-container {
+        flex-direction: column;
     }
+    
      #linkTo {
          width: 400px;
      }
 
-     #breakdown {
-         width: 400px;
+     #breakdown-image {
+         height: 400px;
      }
 
      ul#info li.sub-header{
@@ -68,7 +75,10 @@ a {
     }
 
     #about-program {
-        font-size: large;
+        text-align: justify;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: medium;
     }
 
  }
