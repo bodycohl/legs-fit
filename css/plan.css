@@ -66,10 +66,12 @@ a {
     }
     
      #linkTo {
+         margin-top: 20px;
          width: 400px;
      }
 
      #breakdown-image {
+         margin-top: 20px;
          height: 400px;
      }
 
