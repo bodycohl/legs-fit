@@ -85,5 +85,6 @@ a {
 
     #about-program {
         font-size: medium;
+        text-align: justify;
     }
  }
