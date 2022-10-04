@@ -6,7 +6,7 @@
     margin-top: 75px;
 }
 
-#plan-container-2{
+#plan-container-2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -17,12 +17,17 @@
 }
 
 #breakdown {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 #breakdown-image {
-    margin-top: 50px;
+    margin-top: 20px;
     height: 600px;
+}
+
+#breakdown-image-2 {
+    margin-top: 20px;
+    width: 500px;
 }
 
 ul#info li.sub-header {
@@ -58,22 +63,20 @@ a {
  @media screen and (max-width: 600px)
  {
     #plan-container {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 75px;
     }
     
      #linkTo {
-         margin-top: 20px;
          width: 400px;
      }
 
      #breakdown-image {
-         margin-top: 20px;
          height: 400px;
      }
+
+     #breakdown-image-2 {
+        width: 450px;
+    }
 
      ul#info li.sub-header{
         font-size: large;
@@ -81,8 +84,6 @@ a {
 
     #about-program {
         text-align: justify;
-        width: 350px;
         font-size: medium;
     }
-
  }
