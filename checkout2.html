@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>Legs Fit - Checkout</title>
+        <link rel = "stylesheet" href = "css/index.css">
+        <link rel = "stylesheet" href = "css/checkout.css">
+    </head>
+    <body>
+        <div class = "flex-container-titleNav">
+            <nav>
+                <ul class="navlinks">
+                  <li class="navlink-main"><a href="index.html">Home</a></li>
+                  <li class="navlink-main"><a href="about.html">About</a></li>
+                  <li class="navlink-main"><a href="recipes.html">Recipes</a></li>
+                  <li class="navlink-main"><a href="plans.html">Plans</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class = "sub-titles">Checkout</div>
+        <div id = "summary">
+          <div id = "info">
+            <h3>Six Week Program 2</h3>
+            <p id = "explanation">
+              Once transaction is completed, a link will become available to access the google drive with the workout plan 
+              <br>
+              <br>
+              <b>DO NOT</b> reload the page until the transaction is complete and copy the link into your notes or other file to access whenver you want. If you are logged into your google account when you open the link, you should be able to see the folder in 'Shared with Me' on your google drive and will be able to access it from wherever you are logged into your google account.
+              <br>
+              <br>
+              Feel free to reach out with any questions!
+            </p>
+            <h3>
+              Quantity: 1
+              <br>
+              <br>
+              $50
+            </h3>
+          </div>
+          <img src = "images/plan2.jpeg" id = "checkout-icon">
+        </div>
+        <!--Where download will show after payment is accpeted-->
+        <div id = "download" style = "text-align: center;"></div>
+        <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+          
+            <!-- Connection to paypal link -->
+          <script src = "https://www.paypal.com/sdk/js?client-id=ASmeFr2F4XaYVtbFmLfiowFI2IawRnlASJIAx9c9GaOE2SAGYshkjVImwUfzEYuLIkIcxwm0VGjSMtSe&enable-funding=venmo&currency=USD" data_source="integrationbuilder"></script>
+
+          <script>
+            const fundingSources = [
+              paypal.FUNDING.PAYPAL,
+                paypal.FUNDING.VENMO,
+                paypal.FUNDING.CARD
+              ]
+
+            for (const fundingSource of fundingSources) {
+              const paypalButtonsComponent = paypal.Buttons({
+                fundingSource: fundingSource,
+
+                style: {
+                  shape: 'pill',
+                  label: 'buynow',
+              },
+
+                // set up the transaction
+                createOrder: (data, actions) => {
+                  // pass in any options from the v2 orders create call:
+                  // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                  const createOrderPayload = {
+                    purchase_units: [
+                      {
+                        amount: {
+                          value: '50.00',
+                        },
+                      },
+                    ],
+                  }
+
+                  return actions.order.create(createOrderPayload)
+                },
+
+                // finalize the transaction
+                onApprove: (data, actions) => {
+                  const captureOrderHandler = (details) => {
+                    const payerName = details.payer.name.given_name
+                    console.log('Transaction completed!')
+
+                    // download files
+                    var divArea = document.getElementById("download")
+                    var download = document.createElement("a");
+                    // UPDATE GOOGLE DRIVE LINK FOR DROP 2
+                    download.setAttribute("href", "https://drive.google.com/drive/folders/16x8WeF8h_SDV8GIIDReRrm51tA3LeXCv?usp=sharing");
+                    download.innerHTML = "Click here to download workout plan!"
+
+                    download.style.color = '#ADCE83'
+                    download.style.textDecoration = 'none'
+                    download.style.fontFamily = 'Krungthep'
+
+                    divArea.append(download)
+                  }
+
+                  return actions.order.capture().then(captureOrderHandler)
+                },
+
+                // handle unrecoverable errors
+                onError: (err) => {
+                  console.error(
+                    'An error prevented the buyer from checking out with PayPal',
+                  )
+                },
+              })
+
+              if (paypalButtonsComponent.isEligible()) {
+                paypalButtonsComponent
+                  .render('#paypal-button-container')
+                  .catch((err) => {
+                    console.error('PayPal Buttons failed to render')
+                  })
+              } else {
+                console.log('The funding source is ineligible')
+              }
+            }
+        </script>
+    </body>
+</html>
