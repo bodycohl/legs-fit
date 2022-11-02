@@ -51,7 +51,6 @@ a {
     margin-top: 50px;
     font-family:'Courier New', Courier, monospace;
     font-size: x-large;
-    text-align: center;
 }
 
  /* Footer formatting & icons */
@@ -84,7 +83,9 @@ a {
     }
 
     #about-program {
+        text-align: center;
         font-size: medium;
-        text-align: justify;
+        width: 90%;
+        padding-left: 15px;
     }
  }
