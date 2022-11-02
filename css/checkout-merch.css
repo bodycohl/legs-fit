@@ -1,0 +1,127 @@
+#paypal-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 15px;
+    border: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+}
+
+#checkout-image {
+    width: 200px;
+    height: 50px;
+}
+
+.custom-select {
+    position: relative;
+    display: block;
+    max-width: 400px;
+    min-width: 180px;
+    height: 42px;
+    margin: 0 auto;
+    border: 1px solid #3c5022;
+    background-color: #ADCE83;
+    z-index: 10;
+}
+
+select {
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 12px 55px 15px 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #3c5022;
+}
+
+.custom-select:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    line-height: 38px;
+    content: '\2228';
+    text-align: center;
+    color:#3c5022;
+    font-size: 24px;
+    border-left: 1px solid #3c5022;
+    z-index: -1;
+}
+
+#summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column
+}
+
+#checkout-icon {
+    padding-left: 50px;
+    width: 300px;
+    height: 300px;
+}
+
+h3 {
+    font-family: "Krungthep";
+    font-size: large;
+    text-align: center;
+}
+
+h4 {
+    font-family:'Courier New', Courier, monospace;
+    font-size: medium;
+    text-align: center;
+    font-weight: lighter;
+    width: 700px;
+}
+
+@media screen and (max-width: 600px) {
+    #summary {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-select {
+        margin-top: 20px;
+        max-width: 300px;
+    }
+
+    h4 {
+        width: 90%;
+    }
+
+    #checkout-icon {
+        padding-left: 0px;
+    }
+
+    #paypal-button-container {
+        left: 0;
+    }
+
+    #footer {
+        flex-direction: column;
+    }
+}
