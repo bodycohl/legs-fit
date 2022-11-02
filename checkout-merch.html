@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <title>Legs Fit - Checkout</title>
+        <link rel = "stylesheet" href = "css/index.css">
+        <link rel = "stylesheet" href = "css/checkout-merch.css">
+    </head>
+    <body>
+        <div class = "flex-container-titleNav">
+            <nav>
+                <ul class="navlinks">
+                  <li class="navlink-main"><a href="index.html">Home</a></li>
+                  <li class="navlink-main"><a href="about.html">About</a></li>
+                  <li class="navlink-main"><a href="recipes.html">Recipes</a></li>
+                  <li class="navlink-main"><a href="plans.html">Plans</a></li>
+                  <li class="navlink-main"><a href="merch.html">Merch</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class = "sub-titles">Checkout</div>
+        <form>
+          <div id = "summary">
+            <div id = "info">
+              <center>
+              <h3>'Don't Skip Legs' T-shirt</h3>
+                  <h4>
+                      Quantity: 1
+                      <br>
+                      Size: LARGE
+                      <br>
+                      $30 + Shipping
+                  </h4>
+                  <h3>Additional Info + Shipping Details</h3>
+                  <h4>
+                      If you are local in the Newport / Rhode Island area, you can contact me & pick up your shirt without additional fees. Just reach out via email and we can figure out a time/place to meet. If you live outside the area, there will be a shipping fee of $6.25. We will only be shipping within the USA at this time. You can select your shipping method below and continue to checkout with PayPal, Venmo (not available on mobile) or card.
+                      <br>
+                      <br>
+                      The shirts will be shipped within 2 business days of the order being placed and the tracking information will be forwarded to you as soon as the product is shipped.
+                      <br>
+                      <br>
+                      As always, please feel free to reach out with any questions! I am so excited to share these shirts with you all!
+                  </h4>
+              </center>
+            </div>
+            <img src = "images/merch.jpg" id = "checkout-icon">
+          </div>
+  
+          <!--Dropdown for shipping method-->
+          <div id="smart-button-container">
+              <div style="text-align: center;">
+              <div style="margin-bottom: 1.25rem;">
+                <h3>Shipping Method</h3>
+                <label for = 'styledSelect1' class='custom-select'>
+                  <select id = "item-options">
+                      <option value="Pick Up" price = "30.00">Pick Up - 30.00 USD</option>
+                      <option value="Ship to Me" price = "36.25">Ship to Me - 36.25 USD</option>
+                  </select>
+                  <select style = "visibility: hidden" id = "quantitySelect"></select>
+                  </label>
+  
+                </div>
+                <div id = "paypal-button-container"></div>
+              </div> 
+          </div>
+        </form>
+
+        <!-- Alternative Method -
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="MFM92P78VDSY4">
+            <table>
+            <tr><td><input type="hidden" name="on0" value="Shipping Method">Shipping Method</td></tr><tr><td><select name="os0">
+              <option value="Pick Up">Pick Up $30.00 USD</option>
+              <option value="Ship to Me">Ship to Me $36.25 USD</option>
+            </select> </td></tr>
+            </table>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        -->
+          
+        <!--Connection to PayPal-->
+          <!--TEST LINK <script src = "https://www.paypal.com/sdk/js?client-id=AVP8Tkt7xNNumHxJp1og1xMSgExxeVLqqGlDt0GH7veXhzUD_jPaivLX9H32b2jRj-CsptkgIzk2lhve" data-sdk-integration-source="button-factory"></script>-->
+
+          <script src = "https://www.paypal.com/sdk/js?client-id=ASmeFr2F4XaYVtbFmLfiowFI2IawRnlASJIAx9c9GaOE2SAGYshkjVImwUfzEYuLIkIcxwm0VGjSMtSe&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+
+          <script>
+            function initPayPalButton() {
+                var shipping = 0;
+                var itemOptions = document.querySelector("#smart-button-container #item-options");
+                var quantity = parseInt();
+                var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+
+                if (!isNaN(quantity)) {
+                    quantitySelect.style.visibility = "visible";
+                }
+                var orderDescription = '';
+                if(orderDescription === '') {
+                    orderDescription = 'Item';
+                }
+
+                const fundingSources = [
+                    paypal.FUNDING.PAYPAL,
+                    paypal.FUNDING.VENMO,
+                    paypal.FUNDING.CARD
+                ]
+
+                for (const fundingSource of fundingSources) {
+                    const paypalButtonsComponent = paypal.Buttons({
+                    fundingSource: fundingSource,
+
+                    style: {
+                        shape: 'pill',
+                        layout: 'vertical',
+                        label: 'buynow',
+            },
+
+
+            createOrder: function(data, actions) {
+              var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+              var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+              var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+              if(quantitySelect.options.length > 0) {
+                quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+              } else {
+                quantity = 1;
+              }
+      
+              tax *= quantity;
+              tax = Math.round(tax * 100) / 100;
+              var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+              priceTotal = Math.round(priceTotal * 100) / 100;
+              var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+      
+              return actions.order.create({
+                purchase_units: [{
+                  description: orderDescription,
+                  amount: {
+                    currency_code: 'USD',
+                    value: priceTotal,
+                    breakdown: {
+                      item_total: {
+                        currency_code: 'USD',
+                        value: itemTotalValue,
+                      },
+                      shipping: {
+                        currency_code: 'USD',
+                        value: shipping,
+                      },
+                      tax_total: {
+                        currency_code: 'USD',
+                        value: tax,
+                      }
+                    }
+                  },
+                  items: [{
+                    name: selectedItemDescription,
+                    unit_amount: {
+                      currency_code: 'USD',
+                      value: selectedItemPrice,
+                    },
+                    quantity: quantity
+                  }]
+                }]
+              });
+            },
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(orderData) {
+                
+                // Full available details
+                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+      
+                // Show a success message within this page, e.g.
+                const element = document.getElementById('paypal-button-container');
+                element.innerHTML = '';
+                element.innerHTML = '<h3>Thank you for your payment!</h3>';
+      
+                // Or go to another URL:  actions.redirect('thank_you.html');
+              });
+            },
+            onError: function(err) {
+              console.log(err);
+            },
+          })
+
+            if (paypalButtonsComponent.isEligible()) {
+                paypalButtonsComponent
+                .render('#paypal-button-container')
+                .catch((err) => {
+                    console.error('PayPal Buttons failed to render')
+                })
+            } else {
+                console.log('The funding source is ineligible')
+            }
+        }
+    }
+        initPayPalButton();
+        </script>
+    </body>
+</html>
