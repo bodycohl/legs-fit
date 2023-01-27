@@ -22,6 +22,14 @@ form {
     align-items: center;
 }
 
+#image-stack2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
 #inner-image-stack {
     display: flex;
     flex-direction: row;
@@ -32,6 +40,11 @@ form {
 #checkout-image {
     width: 200px;
     height: 50px;
+}
+
+#hoodie-image {
+    width: 225px;
+    height: 250px;
 }
 
 .custom-select {
